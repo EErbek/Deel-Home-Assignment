@@ -6,14 +6,12 @@ const {jobController} = require('../controllers');
 
 const router = express.Router();
 
+router
+    .route('/unpaid')
+    .get(getProfile, jobController.getUnpaidJobsByProfileId)
 
 router
-  .route('/unpaid')
-  .get(getProfile, jobController.getUnpaidJobsByProfileId)
-
-
-  router
-  .route('/:job_id/pay')
-  .post(getProfile, validate(jobValidation.payForJobById), jobController.payForJobById)
+    .route('/:job_id/pay')
+    .post(getProfile, validate(jobValidation.payForJobById), jobController.payForJobById)
 
 module.exports = router;

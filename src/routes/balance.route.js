@@ -6,8 +6,8 @@ const {balanceController} = require('../controllers');
 
 const router = express.Router();
 
-  router
-  .route('/deposit/:userId')
-  .post(getProfile, validate(balanceValidation.makeDeposit), balanceController.makeDeposit)
+router
+    .route('/deposit/:userId')
+    .post(getProfile, validate(balanceValidation.makeDeposit), balanceController.makeDeposit)
 
 module.exports = router;

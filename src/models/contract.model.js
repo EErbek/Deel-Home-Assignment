@@ -1,15 +1,15 @@
-const { DataTypes } = require('sequelize');
+const {DataTypes} = require('sequelize');
 
 // We export a function that defines the model.
 // This function will automatically receive as parameter the Sequelize connection object.
 module.exports = (sequelize) => {
-	sequelize.define('Contract',  {
+    sequelize.define('Contract', {
         terms: {
-          type: DataTypes.TEXT,
-          allowNull: false
+            type: DataTypes.TEXT,
+            allowNull: false
         },
-        status:{
-          type: DataTypes.ENUM('new','in_progress','terminated')
+        status: {
+            type: DataTypes.ENUM('new', 'in_progress', 'terminated')
         }
-      });
+    });
 };

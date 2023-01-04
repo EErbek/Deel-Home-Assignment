@@ -7,26 +7,26 @@ const adminRoute = require('./admin.route');
 const router = express.Router();
 
 const defaultRoutes = [
-  {
-    path: '/contracts',
-    route: contractRoute,
-  },
-  {
-    path: '/jobs',
-    route: jobRoute,
-  },
-  {
-    path: '/balances',
-    route: balanceRoute,
-  },
-  {
-    path: '/admin',
-    route: adminRoute,
-  },
+    {
+        path: '/contracts',
+        route: contractRoute,
+    },
+    {
+        path: '/jobs',
+        route: jobRoute,
+    },
+    {
+        path: '/balances',
+        route: balanceRoute,
+    },
+    {
+        path: '/admin',
+        route: adminRoute,
+    },
 ];
 
 defaultRoutes.forEach((route) => {
-  router.use(route.path, route.route);
+    router.use(route.path, route.route);
 });
 
 

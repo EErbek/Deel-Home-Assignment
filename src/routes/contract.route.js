@@ -6,13 +6,12 @@ const {contractController} = require('../controllers');
 
 const router = express.Router();
 
+router
+    .route('/')
+    .get(getProfile, contractController.getContractsByProfileId)
 
 router
-  .route('/')
-  .get(getProfile, contractController.getContractsByProfileId)
-
-router
-  .route('/:id')
-  .get(getProfile, validate(contractValidation.getContractById), contractController.getContractById)
+    .route('/:id')
+    .get(getProfile, validate(contractValidation.getContractById), contractController.getContractById)
 
 module.exports = router;
