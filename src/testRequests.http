@@ -1,3 +1,13 @@
+GET  http://localhost:3001/admin/best-clients?start=2020-01-01T00:00:00&end=2023-01-10T00:00:00&limit=3
+Content-Type: application/json
+profile_id:1
+
+###
+GET  http://localhost:3001/admin/best-profession?start=2020-01-01T00:00:00&end=2023-01-10T00:00:00
+Content-Type: application/json
+profile_id:1
+
+###
 POST  http://localhost:3001/balances/deposit/1
 Content-Type: application/json
 profile_id:1
@@ -24,170 +34,5 @@ profile_id:1
 GET  http://localhost:3001/contracts/1
 Content-Type: application/json
 profile_id:1
-
-###
-
-POST http://localhost:8444/v1/auth/logout
-Content-Type: application/json
-
-{
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzdhOTI2MDc5NGFjZjdjZWM0MmE4Y2UiLCJpYXQiOjE2Njg5NzcyOTgsImV4cCI6MTY3MTU2OTI5OCwidHlwZSI6InJlZnJlc2gifQ.ICRgl8EXAUJXy0vbsy2k6H2JNKQsOEInPvG-QPEulCQ"
-
-}
-
-###
-
-POST http://localhost:8444/v1/auth/refresh-tokens
-Content-Type: application/json
-
-{
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Mzc3YjViZjE2NWRiOWM2Mjk1NWZlNGEiLCJpYXQiOjE2Njg3ODk5NzgsImV4cCI6MTY3MTM4MTk3OCwidHlwZSI6InJlZnJlc2gifQ.qWh4qBP87OUzjDoH8XKpwy4jyAHIHuZBmC6JV5maOv8"
-}
-
-###
-
-GET https://localhost:8443/v1/users
-Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzdhOTI2MDc5NGFjZjdjZWM0MmE4Y2UiLCJpYXQiOjE2Njg5NzcyNjksImV4cCI6MTY2ODk3OTA2OSwidHlwZSI6ImFjY2VzcyJ9.MAVOvW47Qua4xSt-1NN10ek7IAihBs2JCowWOJh8T_I
-
-###
-
-
-GET http://localhost:8444/v1/users/1
-Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Mzc3YjViZjE2NWRiOWM2Mjk1NWZlNGEiLCJpYXQiOjE2Njg5NTg2NTQsImV4cCI6MTY2ODk2MDQ1NCwidHlwZSI6ImFjY2VzcyJ9.DmoscNIZujp-H3o-BzDSqDDrq0-3z82vp5goK3p4zhM
-
-###
-
-POST /v1/categories
-Content-Type: application/json
-
-{
-    "id": 0,
-    "name": "Kategoriler",
-    "translations": {
-        "tr": {
-            "name": "Kategoriler",
-            "slug": "kategoriler-0",
-            "seoTitle": "Kategoriler",
-            "seoDescription": "Kategoriler",
-            "seoKeywords": "Kategoriler",
-            "image": "",
-            "contents": []
-        }
-    },
-    "parent": null,
-    "minOrder": 1,
-    "minPrice": 1,
-    "shipmentFee": 1,
-    "commission": 0,
-    "searchPoint": 0,
-    "additionalKeywords": "",
-    "filters": [],
-    "view": "list",
-    "isActive": true,
-    "isLink": false,
-    "isDeleted": false,
-    "link": null,
-    "order": 0,
-    "deletedAt": null
-}
-
-###
-
-POST https://localhost:8443/panel/categories
-Content-Type: application/json
-
-{
-"name": "Buzdolabı",
-"translations": {
-"tr": {
-"name": "Buzdolabı",
-"nameSlug": "Buzdolabı",
-"seoTitle": "Buzdolabı",
-"seoDescription": "Buzdolabı",
-"seoKeywords": "Buzdolabı",
-"image": "",
-"contents": []
-}
-},
-"parent": 7,
-"minOrder": 1,
-"minPrice": 1,
-"shipmentFee": 1,
-"commission": 0,
-"searchPoint": 0,
-"additionalKeywords": "",
-"filters": [],
-"view": "category-list",
-"isActive": true,
-"isLink": false,
-"isDeleted": false,
-"link": null,
-"order": 0,
-"deletedAt": null
-}
-
-###
-
-POST https://localhost:8443/v1/products
-Content-Type: application/json
-
-{
-"id": 2,
-"translations": {
-    "tr": {
-        "title": "fTitle",
-        "name": "fName",
-        "nameSlug": "fname",
-        "description": "fDescription",
-        "supportLink": "",
-        "seoTitle": "Seo Title",
-        "seoDescription": "Seo Description",
-        "seoKeywords": "Seo Keywords Keywords"
-    }
-},
-"name":"fTitle",
-"images": ["https://productimages.hepsiburada.net/s/182/550/110000146124940.jpg/format:webp","https://productimages.hepsiburada.net/s/182/550/110000146124943.jpg/format:webp"],
-"view": "list",
-"productType": "virtual",
-"minOrder": 2,
-"minPrice": 3,
-"marketPrice": 4,
-"shipmentFee": 5,
-"searchPoints": 10,
-"additionalKeywords": "Additional",
-"brand": 0,
-"category": 4,
-"isLiquid": false,
-"isActive": true,
-"isDeleted": false,
-"filters": []
-
-}
-###
-
-
-GET https://localhost:8443/v1/products/1?categoryData=1
-Content-Type: application/json
-
-###
-
-POST https://katalog.bynogame.net:8443/v1/brands
-Content-Type: application/json
-
-{
-"id": 0,
-"name":"Bilinmiyor",
-"image": "",
-"isActive": true,
-"isDeleted": false
-}
-
-###
-
-
-GET https://localhost:8443/v1/brands
-Content-Type: application/json
 
 ###
